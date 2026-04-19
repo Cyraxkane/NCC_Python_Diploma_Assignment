@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Management CRUD</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .btn { padding: 5px 10px; text-decoration: none; border-radius: 3px; }
+        .btn-edit { background: #ffc107; color: black; }
+        .btn-delete { background: #dc3545; color: white; }
+        .btn-add { background: #28a745; color: white; padding: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h2>User Administration Dashboard</h2>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}<p style="color: blue;">{{ messages[0] }}</p>{% endif %}
+    {% endwith %}
+
+    <a href="/create" class="btn btn-add">Add New User</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Passcode</th>
+                <th>Balance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id, user in users.items() %}
+            <tr>
+                <td>{{ id }}</td>
+                <td>{{ user.r_username }}</td>
+                <td>{{ user.r_password }}</td>
+                <td>${{ user.amount }}</td>
+                <td>
+                    <a href="/edit/{{ id }}" class="btn btn-edit">Edit</a>
+                    <a href="/delete/{{ id }}" class="btn btn-delete" onclick="return confirm('Delete this user?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

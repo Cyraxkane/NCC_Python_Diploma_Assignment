@@ -1,0 +1,17 @@
+{
+    "1": {
+        "r_username": "UserA",
+        "r_password": 123,
+        "amount": 3000
+    },
+    "2": {
+        "r_username": "UserB",
+        "r_password": 456,
+        "amount": 3000
+    },
+    "4": {
+        "r_username": "nannan",
+        "r_password": "2040",
+        "amount": 1000
+    }
+}

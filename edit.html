@@ -1,0 +1,11 @@
+<h2>Edit User ID: {{ user_id }}</h2>
+<form method="POST">
+    <label>Username:</label><br>
+    <input type="text" name="username" value="{{ user['r_username'] }}" required><br><br>
+    <label>Passcode:</label><br>
+    <input type="text" name="password" value="{{ user['r_password'] }}" required><br><br>
+    <label>Amount:</label><br>
+    <input type="number" name="amount" value="{{ user['amount'] }}" required><br><br>
+    <button type="submit">Update User</button>
+    <a href="/">Cancel</a>
+</form>
